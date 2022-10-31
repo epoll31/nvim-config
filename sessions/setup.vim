@@ -17,17 +17,22 @@ badd +1 .config/nvim/init.lua
 badd +23 .config/nvim/lua/packer.lua
 badd +8 .config/nvim/lua/pack.lua
 badd +1 .config/nvim/lua
-badd +1 .config/nvim/lua/plugins.lua
+badd +42 .config/nvim/lua/plugins.lua
+badd +1 .config/nvim/lua/options.lua
 argglobal
 %argdel
 $argadd .config/nvim/
-edit .config/nvim/lua/plugins.lua
+edit .config/nvim/lua/options.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
@@ -42,13 +47,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 53 + 53) / 106)
-exe '2resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 2resize ' . ((&columns * 52 + 53) / 106)
-exe '3resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 3resize ' . ((&columns * 52 + 53) / 106)
+wincmd =
 argglobal
-balt .config/nvim/lua/pack.lua
+balt .config/nvim/lua/plugins.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,12 +60,36 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 28) / 57)
+let s:l = 1 - ((0 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
+keepjumps 1
 normal! 0
+lcd ~
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/.config/nvim/lua/plugins.lua", ":p")) | buffer ~/.config/nvim/lua/plugins.lua | else | edit ~/.config/nvim/lua/plugins.lua | endif
+if &buftype ==# 'terminal'
+  silent file ~/.config/nvim/lua/plugins.lua
+endif
+balt ~/.config/nvim/lua/options.lua
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 44 - ((15 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 44
+normal! 031|
 lcd ~
 wincmd w
 argglobal
@@ -83,7 +108,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 14) / 28)
+let s:l = 8 - ((7 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -107,20 +132,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((6 * winheight(0) + 14) / 28)
+let s:l = 8 - ((7 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 8
-normal! 016|
+normal! 0
 lcd ~
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 53 + 53) / 106)
-exe '2resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 2resize ' . ((&columns * 52 + 53) / 106)
-exe '3resize ' . ((&lines * 28 + 29) / 59)
-exe 'vert 3resize ' . ((&columns * 52 + 53) / 106)
+3wincmd w
+wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -135,6 +156,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -37,17 +37,32 @@ require('packer').startup(function(use)
   }
 
   use 'nvim-tree/nvim-web-devicons'
+
+  use { 
+    "ellisonleao/gruvbox.nvim",
+    config    = function()
+                  require('gruvbox').setup {}
+                  vim.cmd([[colorscheme gruvbox]])
+                end
+  }
   
   use {
     'nvim-lualine/lualine.nvim',
-    requires  = { 'kyazdani42/nvim-web-devicons', opt = true },
-    options   = { theme = 'gruvbox-material',
-                  section_separators = { left = ' ', right = ' ' },
-                  component_separators = { left = ' ', right = ' ' } },
-    sections  = { lualine_a = { 'mode' } },
+    requires  = { 
+                  'kyazdani42/nvim-web-devicons', 
+                  opt = true 
+                },
+    options   = { 
+                  theme = 'gruvbox_dark',
+                  section_separators    = { left = '', right = '' },
+                  component_separators  = { left = '', right = '' }
+                },
+    sections  = { 
+                  lualine_a = { 'mode' } 
+                },
     config    = function() 
-      require('lualine').setup {}
-    end
+                  require('lualine').setup {}
+                end
   }
   
 end)

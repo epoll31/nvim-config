@@ -17,6 +17,6 @@ o.wrap                = true
 
 
 o.termguicolors       = true 
-
-o.guifont = { "JetBrains Mono", "h12" }
+o.background          = "dark"
+-- o.guifont = { "JetBrains Mono", "h12" }
 
