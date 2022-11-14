@@ -1,23 +1,12 @@
-local key_mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(
-    mode,
-    key,
-    result,
-    {noremap = true, silent = true}
-  )
-end
 
+vim.keymap.set('', '<up>', '<nop>')
+vim.keymap.set('', '<down>', '<nop>')
+vim.keymap.set('', '<left>', '<nop>')
+vim.keymap.set('', '<right>', '<nop>')
+vim.keymap.set('i', '<TAB>', function()
+  return vim.fn.pumvisible() == 1 and '<C-n>' or '<TAB>' 
+end, { expr = true })
+vim.keymap.set('i', '<S-TAB>', function()
+  return vim.fn.pumvisible() == 1 and '<C-p>' or '<S-TAB>'
+end, { expr = true })
 
-key_mapper('', '<up>', '<nop>')
-key_mapper('', '<down>', '<nop>')
-key_mapper('', '<left>', '<nop>')
-key_mapper('', '<right>', '<nop>')
-key_mapper('i', 'jk', '<ESC>')
-key_mapper('i', 'JK', '<ESC>')
-key_mapper('i', 'jK', '<ESC>')
-key_mapper('v', 'jk', '<ESC>')
-key_mapper('v', 'JK', '<ESC>')
-key_mapper('v', 'jK', '<ESC>')
-
-
-key_mapper('', '<CAPS>', '<ESC>')

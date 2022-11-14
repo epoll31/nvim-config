@@ -10,13 +10,13 @@ o.shiftwidth          = 2
 o.expandtab           = true
 o.hlsearch            = false
 o.incsearch           = true
-  
+
 o.smartindent         = true
 
 o.wrap                = true
 
 
-o.termguicolors       = true 
+o.termguicolors       = true
 o.background          = "dark"
--- o.guifont = { "JetBrains Mono", "h12" }
+o.guifont = { "JetBrains Mono", "h12" }
 
