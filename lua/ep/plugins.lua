@@ -13,11 +13,7 @@ return require('packer').startup(function(use)
 			opt = true 
 		},
 	  config = {
-	  	require('lualine').setup({
-	---			options = { 
-	--				theme = lualineTheme 
-	---			}
-			})
+	  	require('lualine').setup()
 	 	}
 	}	
 
