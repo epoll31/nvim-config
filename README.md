@@ -1,5 +1,4 @@
-# .config-nvim
+# 💤 LazyVim
 
- This is my NeoVim setup. Feel free to look through it, critique it, use it, or more.
-
- ~ Ethan Pollack
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
