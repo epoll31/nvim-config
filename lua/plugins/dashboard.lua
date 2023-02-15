@@ -9,6 +9,9 @@ return {
       )
     local logo =
       [[
+
+
+			
                      88                                                                 88                      
                      88                                                                 ""                      
                      88                                                                                         
@@ -18,7 +21,10 @@ a8P_____88  a8"    `Y88  a8"     "8a  a8"    `Y88             88P'   `"8a  `8b  
 "8b,   ,aa  "8a,   ,d88  "8a,   ,a8"  "8a,   ,d88     888     88       88    `8b,d8'    88  88      88      88  
  `"Ybbd8"'   `"8bbdP"Y8   `"YbbdP"'    `"YbbdP"Y8     888     88       88      "8"      88  88      88      88  
                                        aa,    ,88                                                               
-                                        "Y8bbdP"                                                                
+                                        "Y8bbdP"     
+
+
+
     ]]
 
     dashboard.section.header.val =
