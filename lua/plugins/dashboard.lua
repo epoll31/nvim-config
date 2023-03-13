@@ -77,6 +77,12 @@ a8P_____88  a8"    `Y88  a8"     "8a  a8"    `Y88             88P'   `"8a  `8b  
           ":Lazy<CR>"
         ),
         dashboard.button(
+          "m",
+          "鈴"
+            .. " Mason",
+          ":Mason<CR>"
+        ),
+        dashboard.button(
           "q",
           " "
             .. " Quit",
