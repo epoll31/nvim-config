@@ -26,23 +26,23 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   },
 })
-
-require('copilot').setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-require('copilot_cmp').setup()
+--
+-- require('copilot').setup({
+--   suggestion = { enabled = false },
+--   panel = { enabled = false },
+-- })
+-- require('copilot_cmp').setup()
 
 local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    {name = 'copilot'},
+    -- {name = 'copilot'},
     {name = 'nvim_lsp'},
   },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
+      -- behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
     ['<C-c'] = cmp.mapping.abort(),
