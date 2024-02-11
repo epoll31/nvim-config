@@ -2,14 +2,14 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 --vim.keymap.set("n", "<leader>q", ":q<Enter>")
 vim.keymap.set("n", "<leader>q", function()
-    local win_count = vim.api.nvim_eval("winnr('$')")
-    if win_count == 1 then
-        -- This is where you place the logic that should be executed if it's the last window.
-        -- Replace this comment with your command or logic for <leader>pf.
-        require("telescope.builtin").find_files({})
-    else
-        vim.cmd("q")
-    end
+  local win_count = vim.api.nvim_eval("winnr('$')")
+  if win_count == 1 then
+    -- This is where you place the logic that should be executed if it's the last window.
+    -- Replace this comment with your command or logic for <leader>pf.
+    require("telescope.builtin").find_files({})
+  else
+    vim.cmd("q")
+  end
 end
 )
 
@@ -33,6 +33,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- test test test test4
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
