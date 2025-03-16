@@ -1,4 +1,1 @@
-
-
-
-require("main")
+require("config")

@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 --vim.keymap.set("n", "<leader>q", ":q<Enter>")
 vim.keymap.set("n", "<leader>q", function()
@@ -13,17 +12,29 @@ vim.keymap.set("n", "<leader>q", function()
 end
 )
 
-vim.keymap.set("n", "<leader>v", "<cmd>vs<CR>")
-vim.keymap.set("n", "<leader>s", "<cmd>sp<CR>")
-vim.keymap.set("n", "<leader>h", "<C-w>h")
-vim.keymap.set("n", "<leader>j", "<C-w>j")
-vim.keymap.set("n", "<leader>k", "<C-w>k")
-vim.keymap.set("n", "<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>v", "<cmd>vs<CR>") -- split horizontal
+vim.keymap.set("n", "<leader>s", "<cmd>sp<CR>") -- split vertical
+vim.keymap.set("n", "<leader>h", "<C-w>h")      -- pane left
+vim.keymap.set("n", "<leader>j", "<C-w>j")      -- pane down
+vim.keymap.set("n", "<leader>k", "<C-w>k")      -- pane up
+vim.keymap.set("n", "<leader>l", "<C-w>l")      -- page right
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")      -- page right
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")      -- page right
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")      -- page right
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")      -- page right
+
+
+-- <leader>r  ->  r = run
+vim.keymap.set("n", "<leader>rf", "<F3>")                                    -- f = format
+-- <leader>p  ->  p = project
+vim.keymap.set("n", "<leader>pf", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
 
 vim.keymap.set("n", "<leader>so", "<cmd>source $HOME/.config/nvim/init.lua <CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -31,10 +42,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
-
--- test test test test4
+-- greatest remap ever -- TODO: what does this do?
+-- vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
