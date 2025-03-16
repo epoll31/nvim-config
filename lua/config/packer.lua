@@ -1,0 +1,130 @@
+-- vim.cmd [[packadd packer.nvim]]
+--
+-- return require('packer').startup(function(use)
+--   -- Packer can manage itself
+--   use 'wbthomason/packer.nvim'
+--
+--   use {
+--     'nvim-telescope/telescope.nvim', tag = '0.1.2',
+--     requires = { { 'nvim-lua/plenary.nvim' } }
+--   }
+--
+--   use { "ellisonleao/gruvbox.nvim" }
+--
+--   use {
+--     'nvim-treesitter/nvim-treesitter',
+--     { run = ':TSUpdate' }
+--   }
+--
+--   use { 'mbbill/undotree' }
+--   use { 'tpope/vim-fugitive' }
+--
+--   use {
+--     'VonHeikemen/lsp-zero.nvim',
+--     branch = 'v3.x',
+--     requires = {
+--       -- LSP Support
+--       { 'neovim/nvim-lspconfig' },             -- Required
+--       { 'williamboman/mason.nvim' },           -- Optional
+--       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+--       -- Autocompletion
+--       { 'hrsh7th/nvim-cmp' },                  -- Required
+--       { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+--       { 'L3MON4D3/LuaSnip' },                  -- Required
+--     }
+--   }
+--
+--   use {
+--     'mg979/vim-visual-multi'
+--   }
+--
+--   use {
+--     'nvim-lualine/lualine.nvim',
+--     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+--   }
+--
+--   use {
+--     'numToStr/Comment.nvim',
+--     config = function()
+--       require('Comment').setup()
+--     end
+--   }
+--
+--   use {
+--     "folke/which-key.nvim",
+--     config = function()
+--       vim.o.timeout = true
+--       vim.o.timeoutlen = 300
+--       require("which-key").setup {
+--       }
+--     end
+--   }
+--
+--   use {
+--     'akinsho/flutter-tools.nvim',
+--     requires = {
+--       'nvim-lua/plenary.nvim',
+--       'stevearc/dressing.nvim', -- optional for vim.ui.select
+--     },
+--     config = {
+--       require('flutter-tools').setup {
+--       }
+--     }
+--   }
+--
+--   use({
+--     "coffebar/neovim-project",
+--     config = function()
+--       -- enable saving the state of plugins in the session
+--       vim.opt.sessionoptions:append("globals") -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
+--       -- setup neovim-project plugin
+--       require("neovim-project").setup {
+--         projects = { -- define project roots
+--           "~/projects/*",
+--           "~/.config/*",
+--         },
+--         picker = {
+--           type = "telescope", -- or "fzf-lua"
+--         }
+--       }
+--     end,
+--     requires = {
+--       { "nvim-lua/plenary.nvim" },
+--       -- optional picker
+--       { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+--       -- optional picker
+--       { "ibhagwan/fzf-lua" },
+--       { "Shatur/neovim-session-manager" },
+--     }
+--   })
+--
+--   use({
+--     "Shatur/neovim-session-manager",
+--
+--     config = function()
+--       local config = require('session_manager.config')
+--       require('session_manager').setup({
+--         autoload_mode = { config.AutoloadMode.CurrentDir, config.AutoloadMode.LastSession }
+--       })
+--     end
+--   })
+--   use {
+--     'goolord/alpha-nvim',
+--     requires = {
+--       'echasnovski/mini.icons',
+--       'nvim-lua/plenary.nvim'
+--     },
+--     config = function()
+--       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+--     end
+--   }
+--
+--   use {
+--     "dimaportenko/project-cli-commands.nvim",
+--
+--     dependencies = {
+--       "akinsho/toggleterm.nvim",
+--       "nvim-telescope/telescope.nvim",
+--     },
+--   }
+-- end)

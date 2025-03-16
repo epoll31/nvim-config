@@ -1,0 +1,1 @@
+[x] convert to lazy.nvim
