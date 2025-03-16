@@ -1,8 +1,12 @@
 return {
   {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme gruvbox]])
+    end
   },
+  
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -30,11 +34,15 @@ return {
       },
     },
   },
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
+  --[[ {
+    "goolord/alpha-nvim",
+    dependencies = {
+      "echasnovski/mini.icons",
+      "nvim-lua/plenary.nvim"
+    },
     config = function()
-      vim.cmd([[colorscheme gruvbox]])
+      require("alpha").setup(require("alpha.themes.dashboard").config)
     end
-  }
+  }, ]]
+
 }

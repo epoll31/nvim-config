@@ -1,1 +1,1 @@
-[ ] convert to lazy.nvim
+[x] convert to lazy.nvim
