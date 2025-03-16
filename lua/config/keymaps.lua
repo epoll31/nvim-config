@@ -28,7 +28,11 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")      -- page r
 -- <leader>r  ->  r = run
 vim.keymap.set("n", "<leader>rf", "<F3>")                                    -- f = format
 -- <leader>p  ->  p = project
+-- vim.keymap.set("n", "<leader>ps", "<cmd>NeovimProjectDiscover history <CR>") --[[  ]]-- f = find
+vim.keymap.set("n", "<leader>pf:", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
+vim.keymap.set("n", "<leader>pp", "<cmd>NeovimProjectHistory <CR>") -- f = find
 vim.keymap.set("n", "<leader>pf", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
+
 
 vim.keymap.set("n", "<leader>so", "<cmd>source $HOME/.config/nvim/init.lua <CR>")
 

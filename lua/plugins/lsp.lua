@@ -17,5 +17,17 @@ return {
   },
   {
     "neovim/nvim-lspconfig"
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate"
+  },
+  
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end
+  },
+
 }
