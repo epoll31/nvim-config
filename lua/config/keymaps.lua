@@ -1,44 +1,42 @@
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 --vim.keymap.set("n", "<leader>q", ":q<Enter>")
 vim.keymap.set("n", "<leader>q", function()
-  local win_count = vim.api.nvim_eval("winnr('$')")
-  if win_count == 1 then
-    -- This is where you place the logic that should be executed if it's the last window.
-    -- Replace this comment with your command or logic for <leader>pf.
-    require("telescope.builtin").find_files({})
-  else
-    vim.cmd("q")
-  end
-end
-)
+	local win_count = vim.api.nvim_eval("winnr('$')")
+	if win_count == 1 then
+		-- This is where you place the logic that should be executed if it's the last window.
+		-- Replace this comment with your command or logic for <leader>pf.
+		require("telescope.builtin").find_files({})
+	else
+		vim.cmd("q")
+	end
+end)
 
 vim.keymap.set("n", "<leader>v", "<cmd>vs<CR>") -- split horizontal
 vim.keymap.set("n", "<leader>s", "<cmd>sp<CR>") -- split vertical
-vim.keymap.set("n", "<leader>h", "<C-w>h")      -- pane left
-vim.keymap.set("n", "<leader>j", "<C-w>j")      -- pane down
-vim.keymap.set("n", "<leader>k", "<C-w>k")      -- pane up
-vim.keymap.set("n", "<leader>l", "<C-w>l")      -- page right
+vim.keymap.set("n", "<leader>h", "<C-w>h") -- pane left
+vim.keymap.set("n", "<leader>j", "<C-w>j") -- pane down
+vim.keymap.set("n", "<leader>k", "<C-w>k") -- pane up
+vim.keymap.set("n", "<leader>l", "<C-w>l") -- page right
 
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")      -- page right
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")      -- page right
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")      -- page right
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")      -- page right
-
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<CR>")
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+vim.keymap.set("n", "<leader>fts", "<cmd>Telescope treesitter<CR>")
 
 -- <leader>r  ->  r = run
-vim.keymap.set("n", "<leader>rf", "<F3>")                                    -- f = format
+vim.keymap.set("n", "<leader>rf", "<F3>") -- f = format
 -- <leader>p  ->  p = project
 -- vim.keymap.set("n", "<leader>ps", "<cmd>NeovimProjectDiscover history <CR>") --[[  ]]-- f = find
 vim.keymap.set("n", "<leader>pf:", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
 vim.keymap.set("n", "<leader>pp", "<cmd>NeovimProjectHistory <CR>") -- f = find
 vim.keymap.set("n", "<leader>pf", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
 
-
 vim.keymap.set("n", "<leader>so", "<cmd>source $HOME/.config/nvim/init.lua <CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

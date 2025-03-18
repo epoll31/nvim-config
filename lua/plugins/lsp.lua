@@ -16,10 +16,10 @@ return {
 	--   end
 	-- },
 	-- { "neovim/nvim-lspconfig" },
-	-- {
-	--   "nvim-treesitter/nvim-treesitter",
-	--   build = ":TSUpdate"
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
 	-- {
 	--   "hrsh7th/nvim-cmp",
 	--   dependencies = {
