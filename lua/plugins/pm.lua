@@ -32,30 +32,14 @@ return {
 	},
 
 	{
-		-- "diniamo/run.nvim",
-		dir = "~/projects/run.nvim/",
-		lazy = false,
-		config = function()
-			local run = require("run")
-
-			-- Runs the cached command
-			vim.keymap.set("n", "<leader>ri", require("run").run)
-			-- Prompts for a command, and overrides the cached one with it
-			vim.keymap.set("n", "<leader>ro", function()
-				require("run").run(nil, true)
-			end)
-			-- Prompts for a command to run, without overriding
-			vim.keymap.set("n", "<leader>rc", require("run").run_prompt)
-		end,
-	},
-
-	{
-		dir = "~/projects/script_runner.nvim",
+		-- dir = "~/projects/script_runner.nvim",
+		"epoll31/script_runner.nvim",
 		config = function()
 			local sp = require("script_runner")
 			sp.setup()
 
 			vim.keymap.set({ "n", "i" }, "<C-Enter>", require("script_runner").run_default_script)
+			vim.keymap.set("n", "<leader>ss", require("script_runner").script_picker)
 			vim.keymap.set("n", "<leader>fs", require("script_runner").script_picker)
 		end,
 	},
