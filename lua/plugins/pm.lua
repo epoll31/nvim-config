@@ -51,6 +51,13 @@ return {
 
 	{
 		dir = "~/projects/script_runner.nvim",
+		config = function()
+			local sp = require("script_runner")
+			sp.setup()
+
+			vim.keymap.set({ "n", "i" }, "<C-Enter>", require("script_runner").run_default_script)
+			vim.keymap.set("n", "<leader>fs", require("script_runner").script_picker)
+		end,
 	},
 
 	-- {
