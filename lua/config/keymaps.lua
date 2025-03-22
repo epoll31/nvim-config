@@ -29,6 +29,30 @@ vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
 
--- <leader>p  ->  p = project
-vim.keymap.set("n", "<leader>pp", "<cmd>NeovimProjectHistory <CR>") -- f = find
-vim.keymap.set("n", "<leader>pf", "<cmd>NeovimProjectDiscover history <CR>") -- f = find
+-- session bindings
+vim.keymap.set("n", "<leader>ps", function()
+	require("persistence").load()
+end, {
+	desc = "Load CD Session",
+})
+
+-- select a session to load
+vim.keymap.set("n", "<leader>pS", function()
+	require("persistence").select()
+end, {
+	desc = "Select Session",
+})
+
+-- load the last session
+vim.keymap.set("n", "<leader>pl", function()
+	require("persistence").load({ last = true })
+end, {
+	desc = "Load Last Session",
+})
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set("n", "<leader>pd", function()
+	require("persistence").stop()
+end, {
+	desc = "Stop Persistence",
+})
