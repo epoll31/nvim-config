@@ -6,13 +6,22 @@ return {
 	-- 		vim.cmd([[colorscheme gruvbox]])
 	-- 	end,
 	-- },
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("tokyonight").setup()
+	-- 		vim.cmd([[colorscheme tokyonight]])
+	-- 	end,
+	-- },
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		"navarasu/onedark.nvim",
 		config = function()
-			require("tokyonight").setup()
-			vim.cmd([[colorscheme tokyonight]])
+			require("onedark").setup({
+				style = "darker",
+			})
+			vim.cmd([[colorscheme onedark]])
 		end,
 	},
 }
