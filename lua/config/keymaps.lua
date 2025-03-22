@@ -1,5 +1,6 @@
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
---vim.keymap.set("n", "<leader>q", ":q<Enter>")
+vim.keymap.set("n", "<leader>e", vim.cmd.Oil)
+-- TODO: add <leader>E to redirect to explorer in CWD
+
 vim.keymap.set("n", "<leader>q", function()
 	local win_count = vim.api.nvim_eval("winnr('$')")
 	if win_count == 1 then
