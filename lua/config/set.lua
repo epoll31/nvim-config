@@ -8,8 +8,8 @@ vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
 
-vim.api.nvim_set_var('t_SI', '\27[5 q')
-vim.api.nvim_set_var('t_EI', '\27[1 q')
+vim.api.nvim_set_var("t_SI", "\27[5 q")
+vim.api.nvim_set_var("t_EI", "\27[1 q")
 vim.opt.guicursor = "n:block,i:ver10,v:block,o:block"
 vim.opt.cursorline = true
 
@@ -29,8 +29,6 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
