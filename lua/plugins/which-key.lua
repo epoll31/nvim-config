@@ -51,6 +51,7 @@ return {
 				{ "<leader>f", group = "[F]ind" },
 				{ "<leader>w", group = "[W]orkspace" },
 				{ "<leader>t", group = "[T]ab" },
+				{ "<leader>tm", group = "[T]ab [M]ove" },
 			},
 		},
 	},
