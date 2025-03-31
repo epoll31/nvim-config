@@ -34,7 +34,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
 --vim.opt.colorcolumn = "80"
 --vim.api.nvim_command('autocmd WinLeave * set colorcolumn=0')
 --vim.api.nvim_command('autocmd WinEnter * set colorcolumn=80')
+
+vim.diagnostic.config({
+	virtual_lines = true,
+	virtual_text = false,
+})
