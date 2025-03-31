@@ -25,6 +25,33 @@ vim.keymap.set("n", "<leader>j", "<C-w>j") -- pane down
 vim.keymap.set("n", "<leader>k", "<C-w>k") -- pane up
 vim.keymap.set("n", "<leader>l", "<C-w>l") -- page right
 
+-- moving align center
+-- Move 1 line and center
+vim.keymap.set("n", "<C-j>", "<cmd>normal! jzz<CR>", {
+	noremap = true,
+	silent = true,
+	desc = "Move down 1 line and center screen",
+})
+
+vim.keymap.set("n", "<C-k>", "<cmd>normal! kzz<CR>", {
+	noremap = true,
+	silent = true,
+	desc = "Move up 1 line and center screen",
+})
+
+-- Move 10 lines and center
+vim.keymap.set("n", "<C-S-j>", "<cmd>normal! 10jzz<CR>", {
+	noremap = true,
+	silent = true,
+	desc = "Move down 10 lines and center screen",
+})
+
+vim.keymap.set("n", "<C-S-k>", "<cmd>normal! 10kzz<CR>", {
+	noremap = true,
+	silent = true,
+	desc = "Move up 10 lines and center screen",
+})
+
 -- lua sourcing
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
