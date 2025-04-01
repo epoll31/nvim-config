@@ -53,9 +53,9 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>normal! 10kzz<CR>", {
 })
 
 -- lua sourcing
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
+vim.keymap.set("n", "<C-s>f", "<cmd>source %<CR>")
+vim.keymap.set("n", "<C-s>l", ":.lua<CR>")
+vim.keymap.set("v", "<C-s>l", ":lua<CR>")
 
 -- session bindings
 vim.keymap.set("n", "<leader>ps", function()
