@@ -1,6 +1,7 @@
 return {
 	{ -- Fuzzy Finder (files, lsp, etc)
 		"nvim-telescope/telescope.nvim",
+		enabled = false, -- refer to the configuration section below
 		event = "VimEnter",
 		branch = "0.1.x",
 		dependencies = {
