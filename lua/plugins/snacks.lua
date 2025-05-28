@@ -14,9 +14,12 @@ return {
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2, gap = 0 },
 				},
 			},
+			dim = {
+				enabled = true,
+			},
 			explorer = {
 				enabled = true,
-				jump = { close = true },
+				auto_close = true,
 			},
 			indent = { enabled = true },
 			input = { enabled = true },
@@ -24,11 +27,18 @@ return {
 				enabled = true,
 				timeout = 3000,
 			},
-			picker = { enabled = true },
+			picker = {
+				enabled = true,
+				sources = {
+					explorer = {
+						auto_close = true,
+					},
+				},
+			},
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
+			sttuscolumn = { enabled = true },
 			words = { enabled = true },
 			styles = {},
 		},

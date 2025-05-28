@@ -19,6 +19,8 @@
 -- PASSED: passed
 -- FAILED: failed
 -- SECTION: section
+-- QUESTION: question
+-- IDEA: idea
 
 return {
 
@@ -47,6 +49,8 @@ return {
 					NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
 					TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 					SECTION = { icon = "󰚟", color = "hint" },
+					QUESTION = { icon = "", color = "test" },
+					IDEA = { icon = "", color = "hint" },
 				},
 			})
 
@@ -63,6 +67,10 @@ return {
 			-- vim.keymap.set("n", "]t", function()
 			-- 	require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
 			-- end, { desc = "Next error/warning todo comment" })
+			--
+			vim.keymap.set("n", "<leader>st", function()
+				require("snacks").picker.todo_comments()
+			end, { desc = "TODO Comments" })
 		end,
 	},
 }

@@ -18,13 +18,13 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- quick moving and spliting  bindings
-vim.keymap.set("n", "<leader>v", "<cmd>vs<CR>") -- split horizontal
-vim.keymap.set("n", "<leader>s", "<cmd>sp<CR>") -- split vertical
-vim.keymap.set("n", "<leader>h", "<C-w>h") -- pane left
-vim.keymap.set("n", "<leader>j", "<C-w>j") -- pane down
-vim.keymap.set("n", "<leader>k", "<C-w>k") -- pane up
-vim.keymap.set("n", "<leader>l", "<C-w>l") -- page right
-
+-- vim.keymap.set("n", "<leader>wv", "<cmd>vs<CR>") -- split horizontal
+-- vim.keymap.set("n", "<leader>ws", "<cmd>sp<CR>") -- split vertical
+-- vim.keymap.set("n", "<leader>wh", "<C-w>h") -- pane left
+-- vim.keymap.set("n", "<leader>wj", "<C-w>j") -- pane down
+-- vim.keymap.set("n", "<leader>wk", "<C-w>k") -- pane up
+-- vim.keymap.set("n", "<leader>wl", "<C-w>l") -- page right
+--
 -- moving align center
 -- Move 1 line and center
 vim.keymap.set("n", "<C-j>", "<cmd>normal! jzz<CR>", {
@@ -53,29 +53,29 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>normal! 10kzz<CR>", {
 })
 
 -- -- SECTION: persistence bindings
--- vim.keymap.set("n", "<leader>ps", function()
--- 	require("persistence").load()
--- end, {
--- 	desc = "Load CD Session",
--- })
---
--- -- select a session to load
--- vim.keymap.set("n", "<leader>pS", function()
--- 	require("persistence").select()
--- end, {
--- 	desc = "Select Session",
--- })
---
--- -- load the last session
--- vim.keymap.set("n", "<leader>pl", function()
--- 	require("persistence").load({ last = true })
--- end, {
--- 	desc = "Load Last Session",
--- })
---
--- -- stop Persistence => session won't be saved on exit
--- vim.keymap.set("n", "<leader>pd", function()
--- 	require("persistence").stop()
--- end, {
--- 	desc = "Stop Persistence",
--- })
+vim.keymap.set("n", "<leader>ps", function()
+	require("persistence").load()
+end, {
+	desc = "Load CD Session",
+})
+
+-- select a session to load
+vim.keymap.set("n", "<leader>pS", function()
+	require("persistence").select()
+end, {
+	desc = "Select Session",
+})
+
+-- load the last session
+vim.keymap.set("n", "<leader>pl", function()
+	require("persistence").load({ last = true })
+end, {
+	desc = "Load Last Session",
+})
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set("n", "<leader>pd", function()
+	require("persistence").stop()
+end, {
+	desc = "Stop Persistence",
+})

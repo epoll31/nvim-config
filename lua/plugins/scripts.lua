@@ -2,7 +2,7 @@ return {
 	{
 		-- "epoll31/scripts.nvim",
 		dir = "~/projects/scripts.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
+		-- dependencies = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			local scripts = require("scripts")
 			scripts.setup()
